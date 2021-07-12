@@ -55,20 +55,30 @@ namespace ConsoleApp1
                         List<Usuario> usuarios = new List<Usuario>();
                         do
                         {
-                            Usuario user = new Usuario();
-                            user.Cadastro();                            
+                            Console.Write("Digite o nome:");
+                            string nome = Validacao.ValidaStringEmBranco();
+                            Console.Write("Digite o sobrenome:");
+                            string sobrenome = Validacao.ValidaStringEmBranco();
+                            Console.Write("Digite o idade:");
+                            int idade = Validacao.ValidaInteiros();
+                            Console.Write("Digite o email:");
+                            string email = Validacao.ValidaStringEmBranco();
+                            Console.Write("Digite o endereco:");
+                            string endereco = Validacao.ValidaStringEmBranco();
+
+                            Usuario user = new Usuario(nome, sobrenome, idade, email, endereco);                                                      
                             Console.WriteLine("Deseja cadastrar mais 1?(y/n)");
                             resposta = Console.ReadLine();
                             
                             usuarios.Add(user);
                         } while (resposta == "y");
                         
-                        Usuario userSelect1 = usuarios.First(u=>u.nome.Equals("chimbinha")); // C# linq - lambda
-                        Usuario userSelect2 = (from u in usuarios where u.nome == "chimbinha" select u).First();
+                        //Usuario userSelect1 = usuarios.First(u=>u.nome.Equals("chimbinha")); // C# linq - lambda
+                        //Usuario userSelect2 = (from u in usuarios where u.nome == "chimbinha" select u).First();
 
                         foreach (var item in usuarios)
                         {
-                            Console.WriteLine($"Usuario -\n nome:{item.nome.ToLower()}\n sobrenome:{item.sobrenome.ToLower()}\n idade:{item.idade}\n email:{item.email.ToLower()}\n end:{item.endereco}\n");
+                            Console.WriteLine($"Usuario -\n nome:{item.Nome.ToLower()}\n sobrenome:{item.Sobrenome.ToLower()}\n idade:{item.Idade}\n email:{item.Email.ToLower()}\n end:{item.Endereco}\n");
                         }
                         
                         break;
