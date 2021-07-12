@@ -67,10 +67,10 @@ namespace ConsoleApp1
                             string endereco = Validacao.ValidaStringEmBranco();
 
                             Usuario user = new Usuario(nome, sobrenome, idade, email, endereco);                                                      
+                            usuarios.Add(user);
                             Console.WriteLine("Deseja cadastrar mais 1?(y/n)");
                             resposta = Console.ReadLine();
                             
-                            usuarios.Add(user);
                         } while (resposta == "y");
                         
                         //Usuario userSelect1 = usuarios.First(u=>u.nome.Equals("chimbinha")); // C# linq - lambda
