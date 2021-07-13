@@ -59,6 +59,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="UsuarioRepository.cs" />
     <Compile Include="Validacao.cs" />
   </ItemGroup>
   <ItemGroup>
