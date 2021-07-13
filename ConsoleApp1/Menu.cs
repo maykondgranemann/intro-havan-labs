@@ -51,36 +51,8 @@ namespace ConsoleApp1
                         Console.WriteLine("Tchau");
                         break;
                     case 1:
-                        string resposta = "";
-                        List<Usuario> usuarios = new List<Usuario>();
-                        do
-                        {
-                            Console.Write("Digite o nome:");
-                            string nome = Validacao.ValidaStringEmBranco();
-                            Console.Write("Digite o sobrenome:");
-                            string sobrenome = Validacao.ValidaStringEmBranco();
-                            Console.Write("Digite o idade:");
-                            int idade = Validacao.ValidaInteiros();
-                            Console.Write("Digite o email:");
-                            string email = Validacao.ValidaStringEmBranco();
-                            Console.Write("Digite o endereco:");
-                            string endereco = Validacao.ValidaStringEmBranco();
-
-                            Usuario user = new Usuario(nome, sobrenome, idade, email, endereco);                                                      
-                            usuarios.Add(user);
-                            Console.WriteLine("Deseja cadastrar mais 1?(y/n)");
-                            resposta = Console.ReadLine();
-                            
-                        } while (resposta == "y");
-                        
-                        //Usuario userSelect1 = usuarios.First(u=>u.nome.Equals("chimbinha")); // C# linq - lambda
-                        //Usuario userSelect2 = (from u in usuarios where u.nome == "chimbinha" select u).First();
-
-                        foreach (var item in usuarios)
-                        {
-                            Console.WriteLine($"Usuario -\n nome:{item.Nome.ToLower()}\n sobrenome:{item.Sobrenome.ToLower()}\n idade:{item.Idade}\n email:{item.Email.ToLower()}\n end:{item.Endereco}\n");
-                        }
-                        
+                        ModuloUsuario moduloUsuario = new ModuloUsuario();
+                        moduloUsuario.Create();                        
                         break;
                     case 2:
                         Console.WriteLine("Em implementacao (falta dev)");
