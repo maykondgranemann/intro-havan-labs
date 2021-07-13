@@ -7,6 +7,8 @@ namespace Data
     {
 
         //encapsulamento - Propriedades
+        [Key]
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }    
         public int Idade {get;set;} 
@@ -21,6 +23,10 @@ namespace Data
             this.Idade = idade;
             this.Email = email;
             this.Endereco = endereco;
+        }
+        public Usuario()
+        {
+
         }
     }
 }
